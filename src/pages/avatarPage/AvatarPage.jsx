@@ -25,7 +25,7 @@ export default function AvatarPage({
   const [selectedImgIndex, setSelectedImgIndex] = useState();
 
   // filtering card image with original image
-  const filterOriginalImg = index => {
+  const filterOriginalImg = (index) => {
     const filteredOriginalImgArr = originalImgsArr.filter(
       (originalImg, originalImgIndex) => originalImgIndex === index
     );
@@ -50,7 +50,7 @@ export default function AvatarPage({
     if (selectedImg) {
       // console.log("submitting to 1st api");
       axios
-        .post("https://7e4f-103-17-110-127.ngrok-free.app/rec", {
+        .post("https://52.56.108.15/recgroup", {
           image: capturedImg.split(",")[1],
           choice: selectedImg.split(",")[1],
         })
@@ -91,7 +91,7 @@ export default function AvatarPage({
               setSelectedImgIndex(index);
               if (index !== 2) {
                 const originalImg = filterOriginalImg(index);
-                base64(originalImg, base64Data => {
+                base64(originalImg, (base64Data) => {
                   setSelectedImg(base64Data);
                 });
               } else {

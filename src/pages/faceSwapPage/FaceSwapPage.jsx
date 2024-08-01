@@ -48,7 +48,7 @@ export default function FaceSwapPage({
   };
 
   // image uploading on server
-  const getUrl = url => {
+  const getUrl = (url) => {
     axios
       .post(
         "https://adp24companyday.com/aiphotobooth/aiphotobooth_garnier/upload.php",
@@ -78,7 +78,7 @@ export default function FaceSwapPage({
       setUrl("");
       // console.log("submitting 2nd api");
       axios
-        .post("https://7e4f-103-17-110-127.ngrok-free.app/send", {
+        .post("https://52.56.108.15/sendgroup", {
           image: capturedImg.split(",")[1],
           choice: selectedImg.split(",")[1],
           map: Object.values(submitList),
